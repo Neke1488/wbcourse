@@ -82,7 +82,7 @@ export default class Basket {
         this.renderCounter();
     }
 
-    totalCountUp = (count) => {
+    totalCountDown = (count) => {
         this.allCount -= count;
         this.renderCounter();
     }
@@ -109,7 +109,7 @@ export default class Basket {
         this.basketPriceTotal.textContent = `${this.allPrice.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} сом`;
     }
     totalPriceUp = (value) => {
-        this.allPrice -= value;
+        this.allPrice += value;
         this.renderToAllPrice();
 
         if(!this.checkForGoods()) {
@@ -118,7 +118,7 @@ export default class Basket {
     }
 
     totalPriceDown = (value) => {
-        this.allPrice += value;
+        this.allPrice -= value;
         this.renderToAllPrice();
 
         if(this.checkForGoods()) {
@@ -203,12 +203,25 @@ export default class Basket {
             this.goodsPriceAccordion.textContent = `${this.goodsAccordPrice.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} сом`
         }
 
+        priceBasketDown = () => {
+            this.renderToAllPriceBasket(-value);
+        }
+
+        priceBasketUp = (value) => {
+            this.goodsAccordPrice += value;
+            this.renderToAllPriceBasket(this.goodsAccordPrice);
+        }
+
+        counterBasketRender = (value) => {
+            this.goodsCountAccordion.textContent = `${value} ${getEndLine(value, goodsTitles)}`;
+        }
+
         basketCounterUp = () => {
-            this.renderToAllPriceBasket(this.goodsAccordCount += 1);
+            this.counterBasketRender(this.goodsAccordCount += 1);
         }
 
         basketCounterDown = () => {
-            this.renderToAllPriceBasket(this.goodsAccordCount -= 1);
+            this.counterBasketRender(this.goodsAccordCount -= 1);
         }
 
         renderForCards = (card) => {
