@@ -665,7 +665,7 @@ html {
     width: 288px;
     font-size: 13px;
     line-height: 16px;
-    background-color: var(--color-system-white);
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
     transform: translateX(-50%);
