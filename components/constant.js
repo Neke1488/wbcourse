@@ -1,6 +1,6 @@
 import goodShirt from '/images/item-1.jpg'
-import goodCase from '/images/item-02.jpg'
-import goodPencils from '/images/item-03.jpg'
+import goodCase from '/images/item-2.jpg'
+import goodPencils from '/images/item-3.jpg'
 import cardMaestro from '/images/maestro.svg'
 import cardVisa from '/images/visa.svg'
 import cardMasterCard from '/images/mastercard.svg'
@@ -66,8 +66,8 @@ export
 const userGoods = [
     {
         id: 1,
-        image: 'Футболка UZcotton мужская',
-        name: goodShirt,
+        image: goodShirt,
+        name: 'Футболка UZcotton мужская',
         color: 'белый',
         size: 56,
         seller: 'Коледино WB',
@@ -92,8 +92,8 @@ const userGoods = [
     },
     {
         id: 2,
-        image: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
-        name: goodCase,
+        image: goodCase,
+        name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
         color: 'прозрачный',
         size: null,
         seller: 'Коледино WB',
@@ -121,8 +121,8 @@ const userGoods = [
     },
     {
         id: 3,
-        image: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell ',
-        name: goodPencils,
+        image: goodPencils,
+        name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell ',
         color: null,
         size: null,
         seller: 'Коледино WB',
@@ -180,7 +180,7 @@ const basketOptions = {
       basketCheckboxSidebarPaymentRemove: '.basket_choose_checkbox_redis[data-type="checkbox_sidebar_payment"]',
       basketButtonChooseTotalSubmit: '.basket_choose_btn[data-type="btn_sidebar_total_submit"]',
       counterForBasketGoods: '.header_basket_count[data-type="counter_basket"]',
-      counterForMobile: '.navbar_mobile_icon_count[data-type="counter-mobile"]',
+      counterForMobile: '.navbar_mobile_icon_count[data-type="mobile_counter"]',
       chooseBasketButtonSmall: 'basket_choose_btn_lil',
 }
 
@@ -198,8 +198,8 @@ const goodsOptions = {
     goodMissing: '.good_item_missing',
     goodPicture: '.good_item_img',
     goodTitle: '.good_item_title',
-    goodColor: '.good_item_property[data-type="good-color"]',
-    goodSize: 'good_item_property[data-type="good_size"]',
+    goodColor: '.good_item_property[data-type="good_color"]',
+    goodSize: '.good_item_property[data-type="good_size"]',
     goodSellers: '.good_item_sellers',
     goodOrganizationName: '.organization_name',
     goodOrganizationNamePosition: '.organization_sell_name',

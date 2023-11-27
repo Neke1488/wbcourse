@@ -7,7 +7,7 @@ export default class Basket {
         this.allPrice = null;
         this.allCount = null;
         this.countVal = null;
-        this.goodsAccordPrice =null;
+        this.goodsAccordPrice = 0;
         this.allOldPrice = null;
         this.allDiscount = null;
         this.goodsAccordCount = null;
@@ -203,7 +203,7 @@ export default class Basket {
             this.goodsPriceAccordion.textContent = `${this.goodsAccordPrice.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} сом`
         }
 
-        priceBasketDown = () => {
+        priceBasketDown = (value) => {
             this.renderToAllPriceBasket(-value);
         }
 
@@ -213,7 +213,7 @@ export default class Basket {
         }
 
         counterBasketRender = (value) => {
-            this.goodsCountAccordion.textContent = `${value} ${getEndLine(value, goodsTitles)}`;
+            this.goodsCountAccordion.textContent = `${value} ${calculation(value, goodsTitles)}`;
         }
 
         basketCounterUp = () => {

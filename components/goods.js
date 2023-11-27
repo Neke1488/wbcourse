@@ -33,7 +33,7 @@ export default class Goods {
             this.offInputAllGoods = inputOffAllGoods;
             this.showedMissinGoods = missingGoodsView;
             this.dateOfDelivery = this.datas.dateOfDelivery;
-            this.id = datas.id;
+            this.id = data.id;
             this.image = data.image;
             this.isChecked = false;
         }
@@ -151,7 +151,7 @@ export default class Goods {
             this.goodItem.remove();
         }
         setEventListenerForMissingGoods = () => {
-            this.deleteMissingGoodsBtn.addEventListener('click' =>, () => {
+            this.deleteMissingGoodsBtn.addEventListener('click', () => {
                 this.goodsMissing.remove();
             });
             this.missingGoodsPlaceToFavoriteBtn.addEventListener('click', () => {
@@ -191,8 +191,9 @@ export default class Goods {
             this.goodsMissing.querySelector(this.optionsGoods.goodPicture).src = this.datas.image;
             this.goodsMissing.querySelector(this.optionsGoods.goodTitle).textContent = this.datas.name.trim();
             this.goodsMissing.querySelector(this.optionsGoods.goodPicture).alt = this.datas.name.trim();
-       
+            
             if (this.datas.color || this.datas.size) {
+                
                 if (this.datas.color) {
                     this.goodsMissing.querySelector(this.optionsGoods.goodColor).textContent = `Цвет: ${this.datas.color.trim()}`;
                 }
@@ -209,6 +210,7 @@ export default class Goods {
                 this.setEventListenerForMissingGoods();
                 return this.goodsMissing;
             }
+
             createGood = () => {
                 this.goodItem = this.getPlace(this.optionsGoods.goodBlock, this.optionsGoods.goodActiveList);
                 this.goodsInput = this.goodItem.querySelector(this.optionsGoods.goodInputCheckbox);
@@ -220,7 +222,7 @@ export default class Goods {
             
                 if (this.datas.color || this.datas.size) {
                     if (this.datas.color) {
-                        this.goodItem.querySelector(this.optionsGoods.goodColor).textContent = `Цвет ${this.datas.color.trim()}`;
+                        this.goodItem.querySelector(this.optionsGoods.goodColor).textContent = `Цвет: ${this.datas.color.trim()}`;
                     }
                     if (this.datas.size) {
                         this.goodItem.querySelector(this.optionsGoods.goodSize).textContent = `${this.datas.size}`;

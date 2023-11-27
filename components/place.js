@@ -1,16 +1,16 @@
 export default class Place {
-    constructor({data, render}, placeContainer) {
+    constructor({data, renderos}, placeContainer) {
         this.datas = data;
-        this.renderer = render;
+        this.renderer = renderos;
         this.container = document.querySelector(placeContainer);
     }
     deleteItems = () => {
         this.container.innerHTML = '';
     }
-    setItem = (e) => {
-        this.container.prepend(e);
+    setItem = (element) => {
+        this.container.prepend(element);
     }
     rendering = () => {
-        this.datas.reverse().forEach(item => this.render(item));
+        this.datas.reverse().forEach(item => this.renderer(item));
     }
 }

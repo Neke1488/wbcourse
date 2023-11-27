@@ -1,4 +1,4 @@
-import 'styles.css';
+import '/styles.css';
 import { formActions } from './components/constant.js';
 import * as all from './components/constant.js';
 import Basket from './components/basket.js';
@@ -19,9 +19,9 @@ const deliveryTakingAddress = [];
 const fromValidationBasket = new Validator(formActions, all.basketView);
 
 const goodList = new Place({
-    data: all.userGoods, rendering: (item) => {
+    data: all.userGoods, renderos: (item) => {
         const good = new Goods(
-            item, all.optionsGoods, basket.addGoodIntoTheList,
+            item, all.goodsOptions, basket.addGoodIntoTheList,
             basket.removeGoodsIntoTheList, basket.arrayForChangeCountGoods,
             basket.basketCounterDown, basket.basketCounterUp, basket.priceBasketDown,
             basket.priceBasketUp, basket.totalPriceUp, basket.totalPriceDown,
@@ -31,8 +31,8 @@ const goodList = new Place({
             basket.allGoodsIsChecked, basket.missingGoodsAll
         );
         goodItemList.push(good);
-        const goodElement = good.createGood();
-        goodList.setItem(goodElement);
+        const goodElem = good.createGood();
+        goodList.setItem(goodElem);
     }
 },
     all.goodContainer,
@@ -40,7 +40,7 @@ const goodList = new Place({
 
 const cardListInPopup = new Place({
     data: all.userData.cards,
-    rendering: (item) => {
+    renderos: (item) => {
         const card = new Card(item, all.card, popupChoosePayment.allInputsOff);
         cardList.push(card);
         const cardElement = card.createCardNow();
@@ -52,7 +52,7 @@ const cardListInPopup = new Place({
 
 const popupForLocation = new Place({
     data: all.userData.delivery.fromAddress,
-    rendering: (item) => {
+    renderos: (item) => {
         const takingDelivery = new TakingDelivery(item, all.location.locationPosition, all.location, popupToAddress.allInputsOff);
         deliveryAddressList.push(takingDelivery);
         const deliveryElement = takingDelivery.createLocationElement();
@@ -64,7 +64,7 @@ all.modalContainerForChooseLocation,
 
 const popupForLocationDelivery = new Place({
     data: all.userData.delivery.toAddress,
-    rendering: (item) => {
+    renderos: (item) => {
         const locationDelivery = new TakingDelivery(item, all.location.locationDeliveryPoint, all.location, popupToAddress.allInputsOff);
         deliveryTakingAddress.push(locationDelivery);
         const deliveryLocationElement = locationDelivery.createDeliveryLocationElement();
@@ -77,7 +77,7 @@ const basket = new Basket(all.basketOptions, goodItemList, {
     deliveryRender: (itemOfList) => {
         const listOfItems = new Place({
             data: itemOfList,
-            rendering: (item) => {
+            renderos: (item) => {
                 const delivery = new Delivery(
                     item
                 );

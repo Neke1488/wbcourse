@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Товары и точка</title>
 </head>
 <body class="this_page">
@@ -53,7 +52,7 @@
                                 <label for="checkbox_accord_good_hide" class="label_accord"></label>
                             <span class="accord_hide">
                                 <span class="accord_hide_info" data-type="accord_count"></span>
-                                
+                                ·
                                 <span class="accord_hide_info" data-type="accord_price"></span>
                             </span>
                             <div class="accord_inside">
@@ -313,7 +312,7 @@
             </a>
             <a href="" class="navbar_mobile_link">
                 <span class="navbar_mobile_icon navbar_mobile_icon_cart navbar_mobile_icon_active"></span>
-                <span class="navbar_mobile_icon_count"></span>
+                <span class="navbar_mobile_icon_count" data-type="mobile_counter"></span>
             </a>
             <a href="" class="navbar_mobile_link">
                 <span class="navbar_mobile_icon navbar_mobile_icon_favorite"></span>
@@ -349,7 +348,7 @@
                 <div class="good_item_product">
                     <a href="#" class="good_item_title"></a>
                     <div class="good_item_properties">
-                        <span class="good_item_property" data-type="good-color"></span>
+                        <span class="good_item_property" data-type="good_color"></span>
                         <div class="good_item_property_wrap">
                             <span class="good_item_label good_item_label_mobile" data-type="good_size">Размер:</span>
                             <span class="good_item_property good_item_property_mobile"></span>
@@ -457,6 +456,6 @@
                 <button class="location_delete"></button>
             </li>
         </template>
-        <script src="main.js"></script>
 </body>
+<script src="main.js"></script>
 </html>
