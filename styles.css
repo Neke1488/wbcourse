@@ -378,7 +378,7 @@ html {
     transition: max-height 2s linear;
   }
 
-  .checkbox_accord:not(:checked) ~ .accrod_hide {
+  .checkbox_accord:not(:checked) ~ .accord_hide {
     display: none;
   }
 
@@ -417,7 +417,7 @@ html {
     padding-left: 5px;
   }
 
-  .accrod_inside {
+  .accord_inside {
     position: relative;
     opacity: 1;
     margin: 0;
@@ -471,7 +471,7 @@ html {
     transition: transform .1s;
   }
 
-  .accrod_down:has(.checkbox_accord:checked)::after {
+  .accord_down:has(.checkbox_accord:checked)::after {
     display:none;
   }
 
@@ -492,12 +492,6 @@ html {
     margin-top: -18px;
   }
 
-  .delivery {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
   .content_for_basket_up {
     margin: 0;
     display: flex;
@@ -510,6 +504,7 @@ html {
     line-height: 28px;
     font-weight: 700;
   }
+
 
   .content_for_basket_up_btn {
   margin: 4px 0 0 0;
@@ -952,7 +947,7 @@ html {
     overflow: hidden;
   }
 
-  .basket_choose_checkbox ~ .basket_choose_checkbox_redis {
+  .basket_choose_checkbox:checked ~ .basket_choose_checkbox_redis {
     background-color: #CB11AB;
     background-image: url('images/icons/basket/checkbox.svg');
     background-size: 20px;
@@ -1540,6 +1535,7 @@ html {
     background-color: white;
     border: none;
     border-radius: 8px;
+    font-family: 'Segoe UI';
     text-align: center;
   }
 
@@ -2020,7 +2016,7 @@ html {
       padding-bottom: 17px;
     }
 
-    .accrod_inside {
+    .accord_inside {
       margin-right: -16px;
     }
 
@@ -2044,10 +2040,6 @@ html {
 
     .content_for_basket_delivery {
       margin-top: 0;
-    }
-    
-    .delivery {
-      gap: 16px;
     }
 
     .popup_btn {
@@ -2314,6 +2306,8 @@ html {
 
     .good_item_count_number {
       width: 100%;
+      font-family: 'Segoe UI';
+      font-size: 100%;
       height: 44px;
     }
 

@@ -85,7 +85,7 @@ const userGoods = [
             }
         ],
         price: {
-            discount: 50.3,
+            discount: 10,
             discountUser: 10,
         },
         oldPrice: 1051

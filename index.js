@@ -17,6 +17,7 @@ const locationAddressList = [];
 const deliveryTakingAddress = [];
 
 const fromValidationBasket = new Validator(formActions, all.basketView);
+
 const goodList = new Place({
     data: all.userGoods, renderos: (item) => {
         
