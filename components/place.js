@@ -13,6 +13,8 @@ export default class Place {
 
     }
     rendering = () => {
+        
         this.datas.reverse().forEach(item => this.renderer(item));
     }
+
 }

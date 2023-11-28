@@ -833,7 +833,7 @@ html {
   }
 
   .recipient_wrap_input_inn {
-    grid-area: inn;
+    grid-area: payer-number;
   }
 
   .input_error_recipient_visible {
@@ -876,9 +876,6 @@ html {
     line-height: 24px;
   }
 
-  .popup_table_item_active {
-    border-color: #CB11AB;
-  }
 
   .basket_choose_btn_edit {
     margin: 4px 2px;
@@ -1058,6 +1055,9 @@ html {
     text-align: center;
   }
 
+
+
+
   .popup {
     box-sizing: border-box;
     display: none;
@@ -1071,6 +1071,10 @@ html {
     z-index: 50;
   }
 
+  .show_popup_window {
+    display: flex;
+  }
+
   .popup_container {
     box-sizing: border-box;
     display: flex;
@@ -1080,6 +1084,22 @@ html {
     border-radius: 0;
     width: 100%;
     height: 100vh;
+  }
+
+  .popup_btn {
+    padding: 8px 24px 12px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: white;
+    background-color: #CB11AB;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .popup_btn:hover {
+    background-color: #e313bf;
   }
 
   .popup_content {
@@ -1093,6 +1113,8 @@ html {
     margin: 0 0 13px;
   }
 
+
+  
   .popup_title {
     margin: 0;
     padding: 0;
@@ -1129,6 +1151,8 @@ html {
     transform: translate(-50%,-50%) rotate(-45deg);
   }
 
+
+
   .popup_table {
     display: flex;
     flex-direction: column;
@@ -1139,6 +1163,7 @@ html {
     gap: 8px;
     margin: 0 0 24px;
   }
+
 
   .popup_table_item {
     padding: 11px 19px;
@@ -1803,6 +1828,8 @@ html {
     line-height: 24px;
   }
 
+   
+
   .location_info {
     position: relative;
     display: flex;
@@ -1857,6 +1884,10 @@ html {
   .input_error_recipient {
     border-color: #C20013;
     color: #C20013;
+  }
+
+  .popup_table_item_active {
+    border-color: #CB11AB;
   }
 
   .navbar_mobile_icon_count {
@@ -2019,6 +2050,10 @@ html {
       gap: 16px;
     }
 
+    .popup_btn {
+      width: 164px;
+    }
+
     .content_for_basket_up_btn {
       margin-top: 8px;
     }
@@ -2070,7 +2105,7 @@ html {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
         'first-name first-name first-name last-name last-name last-name'
-        'email email phone phone inn inn';
+        'email email phone phone payer-number payer-number';
       column-gap: 24px;
       row-gap: 0;
     }
@@ -2133,13 +2168,7 @@ html {
       border-bottom: 1px dashed rgba(203, 17, 171, .2);
       cursor: pointer;
     }
-
-
-
-
-
-
-
+    
     .payment_wrap_sidebar {
       display: flex;
     }

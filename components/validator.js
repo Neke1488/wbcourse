@@ -12,7 +12,6 @@ export default class Validator {
     instrumentButtonState = () => {
         if (this.ifInputInvalid()) { 
             this.elemButton.disabled = true;
-            console.log("cghfd", this.elemButton.disabled); 
         } else {
             this.elemButton.disabled = false;
         }

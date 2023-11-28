@@ -147,7 +147,7 @@ export default class Basket {
             let firstDate = Infinity;
             let lastDate = -Infinity;
 
-            arrayList.forEach(good =>{
+            arrayList.forEach(good => {
                 good.dateOfDelivery.forEach(date => {
                     for (let count in date) {
                         if (Date.parse(date[count][0]) < firstDate) firstDate = new Date(date[count][0]);
@@ -229,7 +229,6 @@ export default class Basket {
 
         renderForCards = (card) => {
             this.allCardIcons.forEach(icon => icon.src = card.data.cardIconUrl);
-            console.log(this.allCardIcons);
             this.allCardNumbers.forEach(number => number.textContent = card.data.cardNumber);
             this.allCardDates.forEach(date => date.textContent = card.data.cardDate);
         }
@@ -260,7 +259,7 @@ export default class Basket {
         }
 
         arrayForChangeCountGoods = (idGood, count) => {
-            for (let i = 0; i < this.goodsVar.length ; i++) {
+            for (let i = 0; i < this.goodsVar.length; i++) {
                 if (this.goodsVar[i].id === idGood) {
                     const [ countDate ] = Object.keys(this.goodsVar[i].dateOfDelivery[this.goodsVar[i].dateOfDelivery.length - 1]);
                     const dateValue = Object.values(this.goodsVar[i].dateOfDelivery[this.goodsVar[i].dateOfDelivery.length - 1][countDate]);

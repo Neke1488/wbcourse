@@ -252,10 +252,10 @@ const location = {
 
 export 
 const goodContainer = '#list_of_goods',
-      modalContainerForChoosePay = '#popup_choose_pay',
+      modalContainerForChoosePay = '#popup_choose_payment',
       modalContainerForChooseAddress = '#popup_choose_address',
       modalContainerForChooseLocation = '#popup_choose_pick_point',
-      modalContainerForOtherLocation = '#popup_table_pick_point_block',
+      modalContainerForOtherLocation = '#popup_choose_pick_point-up',
       choosePayButton = document.querySelector('.content_for_basket_up_btn[data-type="btn_choose_pay"]'),
       chooseAddressButton = document.querySelector('.content_for_basket_up_btn[data-type="choose_address_btn"]'),
       choosePaySidebar = document.querySelector('.basket_choose_btn_edit[data-type="button_sidebar_choose_pay"]'),
