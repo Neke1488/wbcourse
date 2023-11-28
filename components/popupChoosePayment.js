@@ -1,8 +1,8 @@
 import Popup from "./popup";
 
 export default class PopupChoosePayment extends Popup {
-    constructor(popupVariants, listOfCards, changeCardWithKey) {
-        super(popupVariants);
+    constructor(popupVariant, listOfCards, changeCardWithKey) {
+        super(popupVariant);
 
         this.cardList = listOfCards;
         this.btnCard = document.querySelector('.popup_btn[data-type="popup_button_choose_payment"]');

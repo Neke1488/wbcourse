@@ -1,9 +1,9 @@
 import Popup from "./popup";
 export default class PopupToAddress extends Popup {
-    constructor(popupVariants, locationAddressList, locationDeliveryAddressList, changeElementWithKeys) {
-        super(popupVariants);
+    constructor(popupVariant, locationAddressList, deliveryTakingAddress, changeElementWithKeys) {
+        super(popupVariant);
         this.addressLocationList = locationAddressList;
-        this.addressLocationDeliveryList = locationDeliveryAddressList;
+        this.addressLocationDeliveryList = deliveryTakingAddress;
         this.popupButton = document.querySelector('.popup_btn[data-type="btn_popup_choose_address"]');
         this.popupTableLocation = document.querySelector('.popup_table_item[data-type="popup_table_courier"]');
         this.popupTableLocationPlace = document.querySelector('.popup_table_block[data-type="popup_table_pick_block"]');

@@ -190,8 +190,8 @@ html {
     width: 24px;
     height: 24px;
     background-color: #B697D5;
-    -webkit-mask-image: url('icons/header/search.svg');
-    mask-image: url('icons/header/search.svg');
+    -webkit-mask-image: url('images/icons/header/search.svg');
+    mask-image: url('images/icons/header/search.svg');
     background-size: 100%;
     background-repeat: no-repeat;
     border: none;
@@ -231,15 +231,15 @@ html {
   .header_icon_profile {
     margin-left: 15px;
     margin-right: 13px;
-    -webkit-mask-image: url('/icons/header/profile.svg');
-    mask-image: url('/icons/header/profile.svg');
+    -webkit-mask-image: url('images/icons/header/profile.svg');
+    mask-image: url('images/icons/header/profile.svg');
   }
 
   .header_icon_basket {
     margin-left: 10px;
     margin-right: 18px;
-    -webkit-mask-image: url('/icons/header/basket.svg');
-    mask-image: url('/icons/header/basket.svg');
+    -webkit-mask-image: url('images/icons/header/basket.svg');
+    mask-image: url('images/icons/header/basket.svg');
   }
 
   .header_basket_count {
@@ -266,8 +266,8 @@ html {
   }
 
   .header_icon_search {
-    -webkit-mask-image: url('icons/header/search.svg');
-    mask-image: url('icons/header/search.svg');
+    -webkit-mask-image: url('images/icons/header/search.svg');
+    mask-image: url('images/icons/header/search.svg');
   }
 
   .basket {
@@ -435,7 +435,7 @@ html {
 
   .checkbox_goods:checked ~ .checkbox_goods_check {
     background-color: #CB11AB;
-    background-image: url('/icons/basket/checkbox.svg');
+    background-image: url('images/icons/basket/checkbox.svg');
     background-size: 20px;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -567,7 +567,7 @@ html {
     left: 0;
     height: 12px;
     width: 12px;
-    background-image: url('/icons/delivery/rate.svg');
+    background-image: url('images/icons/delivery/rate.svg');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -626,7 +626,7 @@ html {
     left: 8px;
     width: 22px;
     height: 100%;
-    background-image: url('/icons/delivery/success.svg');
+    background-image: url('images/icons/delivery/success.svg');
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100%;
@@ -672,6 +672,14 @@ html {
     z-index: 20;
   }
 
+@media screen and (min-width: 1024px) {
+  .info_of_delivery_if {
+    left: 249px;
+    transform: translateX(0);
+  }
+}
+
+
   .payment_wrap {
     display: flex;
     gap: 8px;
@@ -684,7 +692,7 @@ html {
   width: 32px;
   height: 24px; 
   border-radius: 4px;
-  background: var(--background-smoky, #F6F6FA);
+  
   }
 
   .payment_wrap_for_card {
@@ -877,8 +885,8 @@ html {
     width: 20px;
     height: 20px;
     background-color: #CB11AB;
-    -webkit-mask-image: url('/icons/sidebar/icon_edit.svg');
-    mask-image: url('/icons/sidebar/icon_edit.svg');
+    -webkit-mask-image: url('images/icons/sidebar/icon_edit.svg');
+    mask-image: url('images/icons/sidebar/icon_edit.svg');
     cursor: pointer;
   }
 
@@ -949,7 +957,7 @@ html {
 
   .basket_choose_checkbox ~ .basket_choose_checkbox_redis {
     background-color: #CB11AB;
-    background-image: url('/icons/basket/checkbox.svg');
+    background-image: url('images/icons/basket/checkbox.svg');
     background-size: 20px;
     background-position: center;
     background-repeat: no-repeat;
@@ -1009,7 +1017,7 @@ html {
     left: 0;
     width: 13px;
     height: 15px;
-    background-image: url('/icons/sidebar/check.svg');
+    background-image: url('images/icons/sidebar/check.svg');
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -1216,18 +1224,18 @@ html {
   }
 
   .navbar_mobile_icon_home {
-    -webkit-mask-image: url('/icons/mobile/home.svg');
-    mask-image: url('/icons/mobile/home.svg');
+    -webkit-mask-image: url('images/icons/mobile/home.svg');
+    mask-image: url('images/icons/mobile/home.svg');
   }
 
   .navbar_mobile_icon_search {
-    -webkit-mask-image: url('/icons/mobile/search_mob.svg');
-    mask-image: url('/icons/mobile/search_mob.svg');
+    -webkit-mask-image: url('images/icons/mobile/search_mob.svg');
+    mask-image: url('images/icons/mobile/search_mob.svg');
   }
 
   .navbar_mobile_icon_cart {
-    -webkit-mask-image: url('/icons/mobile/cart.svg');
-    mask-image: url('/icons/mobile/cart.svg');
+    -webkit-mask-image: url('images/icons/mobile/cart.svg');
+    mask-image: url('images/icons/mobile/cart.svg');
   }
 
   .navbar_mobile_icon_active {
@@ -1235,13 +1243,13 @@ html {
   }
 
   .navbar_mobile_icon_favorite {
-    -webkit-mask-image: url('/icons/mobile/favorite.svg');
-    mask-image: url('/icons/mobile/favorite.svg');
+    -webkit-mask-image: url('images/icons/mobile/favorite.svg');
+    mask-image: url('images/icons/mobile/favorite.svg');
   }
 
   .navbar_mobile_icon_profile {
-    -webkit-mask-image: url('/icons/mobile/profile.svg');
-    mask-image: url('/icons/mobile/profile.svg');
+    -webkit-mask-image: url('images/icons/mobile/profile.svg');
+    mask-image: url('images/icons/mobile/profile.svg');
   }
 
   .delivery_goods_list {
@@ -1414,7 +1422,7 @@ html {
     display: block;
     width: 20px;
     height: 20px;
-    background-image: url('/icons/icon_info.svg');
+    background-image: url('images/icons/icon_info.svg');
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
@@ -1574,8 +1582,8 @@ html {
   }
 
   .good_item_icon_favorite {
-    -webkit-mask-image: url('/icons/basket/icon_favorite.svg');
-    mask-image: url('/icons/basket/icon_favorite.svg');
+    -webkit-mask-image: url('images/icons/basket/icon_favorite.svg');
+    mask-image: url('images/icons/basket/icon_favorite.svg');
   }
 
   .good_item_icon_favorite:hover {
@@ -1583,8 +1591,8 @@ html {
   }
 
   .good_item_icon_delete {
-    -webkit-mask-image: url('/icons/basket/delete_icon.svg');
-    mask-image: url('/icons/basket/delete_icon.svg');
+    -webkit-mask-image: url('images/icons/basket/delete_icon.svg');
+    mask-image: url('images/icons/basket/delete_icon.svg');
   }
 
   .good_item_price {
@@ -1809,7 +1817,7 @@ html {
     left: 0;
     width: 12px;
     height: 12px;
-    background-image: url('/icons/delivery/rate.svg');
+    background-image: url('images/icons/delivery/rate.svg');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -1834,8 +1842,8 @@ html {
     margin: 0 0 0 auto;
     width: 20px;
     height: 20px;
-    -webkit-mask-image: url('/icons/basket/delete_icon.svg');
-    mask-image: url('/icons/basket/delete_icon.svg');
+    -webkit-mask-image: url('images/icons/basket/delete_icon.svg');
+    mask-image: url('images/icons/basket/delete_icon.svg');
     background-color: #A0A0A4;
     background-position: center;
     background-repeat: no-repeat;
@@ -2048,15 +2056,6 @@ html {
 
     .delivery_item {
       margin-bottom: 17px;
-    }
-
-
-
-
-
-    .info_of_delivery_if {
-      left: 249px;
-      transform: translateX(0);
     }
 
     .payment_wrap {

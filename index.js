@@ -13,7 +13,7 @@ import Validator from './components/validator.js';
 
 const goodItemList = [];
 const cardList = [];
-const deliveryAddressList = [];
+const locationAddressList = [];
 const deliveryTakingAddress = [];
 
 const fromValidationBasket = new Validator(formActions, all.basketView);
@@ -28,7 +28,7 @@ const goodList = new Place({
             basket.totalCountUp, basket.totalCountDown, basket.totalOldPriceDown,
             basket.totalOldPriceUp, basket.totalDiscountDown, basket.totalDiscountUp,
             basket.countUp, basket.countDown, basket.checkGoodsInput, basket.allGoodsNotChecked,
-            basket.allGoodsIsChecked, basket.missingGoodsAll,
+            basket.allGoodsIsChecked, basket.missingGoodsAll
         );
         goodItemList.push(good);
         const goodElem = good.createGood();
@@ -54,7 +54,7 @@ const popupForLocation = new Place({
     data: all.userData.delivery.fromAddress,
     renderos: (item) => {
         const takingDelivery = new TakingDelivery(item, all.location.locationPosition, all.location, popupToAddress.allInputsOff);
-        deliveryAddressList.push(takingDelivery);
+        locationAddressList.push(takingDelivery);
         const deliveryElement = takingDelivery.createLocationElement();
         popupForLocation.setItem(deliveryElement);
     }
@@ -98,7 +98,8 @@ const popupChoosePayment = new PopupChoosePayment(
     all.popupVariants.choosePayment, cardList, basket.changeCard
 );
 const popupToAddress = new PopupToAddress(
-    all.popupVariants.chooseAddress, deliveryAddressList, deliveryTakingAddress, basket.addressChange
+    all.popupVariants.chooseAddress, locationAddressList, deliveryTakingAddress, basket.addressChange
+    
 );
 
 goodList.rendering();

@@ -181,8 +181,8 @@ export default class Goods {
                 this.deleteGood();
             });
         };
-        getPlace = (placePlace, itemPlace) => {
-            const goodElem = document.querySelector(placePlace).content.querySelector(itemPlace).cloneNode(true);
+        getPlace = (templateBlock, itemPlace) => {
+            const goodElem = document.querySelector(templateBlock).content.querySelector(itemPlace).cloneNode(true);
             return goodElem;
         }
 

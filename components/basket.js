@@ -164,24 +164,24 @@ export default class Basket {
                 })
             });
 
-            arrayData.forEach(data => {
+            arrayData.forEach(dated => {
                 if (!arrayDataResult.length) {
                     arrayDataResult.push({
-                        date: [Object.values(data)[0][0], Object.values(data)[0][1]],
-                        item: [{ count: data.item[0].count, image: data.item[0].image} ]}
+                        date: [Object.values(dated)[0][0], Object.values(dated)[0][1]],
+                        item: [{ count: dated.item[0].count, image: dated.item[0].image} ]}
                         );
                     } else {
                         for (let i = 0; i < arrayDataResult.length; i++) {
                           if (
-                            Date.parse(new Date(arrayDataResult[i].date[0])) === Date.parse(new Date(Object.values(data)[0][0])) && Date.parse(new Date(arrayDataResult[i].date[0])) === Date.parse(new Date(Object.values(data)[0][0]))
+                            Date.parse(new Date(arrayDataResult[i].date[0])) === Date.parse(new Date(Object.values(dated)[0][0])) && Date.parse(new Date(arrayDataResult[i].date[0])) === Date.parse(new Date(Object.values(dated)[0][0]))
                           )  {
-                            arrayDataResult[i].item.push({ count: data.item[0].count, image: data.item[0].image});
+                            arrayDataResult[i].item.push({ count: dated.item[0].count, image: dated.item[0].image});
                             return;
                         }
                     }
                     arrayDataResult.push({
-                        date: [Object.values(data)[0][0], Object.values(data)[0][1]],
-                        item: [{ count: data.item[0].count, image: data.item[0].image }]
+                        date: [Object.values(dated)[0][0], Object.values(dated)[0][1]],
+                        item: [{ count: dated.item[0].count, image: dated.item[0].image }]
                     });
                 }
 
@@ -228,9 +228,10 @@ export default class Basket {
         }
 
         renderForCards = (card) => {
-            this.allCardIcons.forEach(icon => icon.src = card.data.urlCard);
-            this.allCardNumbers.forEach(number => number.textContent = card.data.numberCard);
-            this.allCardDates.forEach(date => date.textContent = card.data.dateCard);
+            this.allCardIcons.forEach(icon => icon.src = card.data.cardIconUrl);
+            console.log(this.allCardIcons);
+            this.allCardNumbers.forEach(number => number.textContent = card.data.cardNumber);
+            this.allCardDates.forEach(date => date.textContent = card.data.cardDate);
         }
         changeCard = (card) => {
             this.renderForCards(card);
@@ -244,9 +245,9 @@ export default class Basket {
                 this.deliveryVariables.textContent = this.basketVar.deliveryPlaceText;
                 this.openDeliverySidebar.textContent = this.basketVar.deliveryTypeInSidebarText;
                
-                this.deliveryDataVisible.classList.remove(this.basketVar.hideDeliveryData)
-                this.deliveryRatingAll.textContent = address.data.rate;
-                this.deliveryHoursVisible.textContent = address.data.workHours;
+                this.deliveryDataVisible.classList.remove(this.basketVar.hideDeliveryData);
+                this.deliveryRatingAll.textContent = address.dated.rate;
+                this.deliveryHoursVisible.textContent = address.dated.workHours;
             } else {
                 this.deliveryVariables.textContent = this.basketVar.deliveryTypeText;
                 this.deliveryDataVisible.classList.add(this.basketVar.hideDeliveryData);

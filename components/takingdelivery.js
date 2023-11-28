@@ -1,8 +1,8 @@
 export default class TakingDelivery {
-    constructor(dates, blockOptions, elementOptions, allInputOff) {
+    constructor(dates, templateBlock, elementOptions, allInputOff) {
         this.dated = dates;
         this.optionsForElement = elementOptions;
-        this.optionsBlock = blockOptions;
+        this.templateBlock = templateBlock;
         this.deliveryTaking = this.optionsForElement.locationList;
         this.isChecked = false;
         this.offInputAll = allInputOff;
@@ -19,7 +19,7 @@ export default class TakingDelivery {
         })
     }
     getPlace = () => {
-        const itemElem = document.querySelector(this.optionsBlock).content.querySelector(this.deliveryTaking).cloneNode(true);
+        const itemElem = document.querySelector(this.templateBlock).content.querySelector(this.deliveryTaking).cloneNode(true);
         return itemElem;
     }
     inputOn = () => {
