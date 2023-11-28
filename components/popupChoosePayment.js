@@ -10,7 +10,7 @@ export default class PopupChoosePayment extends Popup {
     }
     chooseCardBrand = () => {
         this.cardActive = this.cardList[this.cardList.length - 1];
-        this.cardActive.onInput();
+        this.cardActive.inputOn();
         this.changeCardWithKeys(this.cardList[this.cardList.length - 1]);  
     }
     setEventListener = () => {
@@ -24,7 +24,7 @@ export default class PopupChoosePayment extends Popup {
         })
     }
     allInputsOff = () => {
-        this.cardList.forEach(card => card.offInput());
+        this.cardList.forEach(card => card.inputOff());
     }
 
     cardChanger = () => {
@@ -33,7 +33,7 @@ export default class PopupChoosePayment extends Popup {
     }
     openPopup() {
         super.openPopup();
-        this.cardList.forEach(card => card.offInput());
-        this.cardActive.onInput();
+        this.cardList.forEach(card => card.inputOff());
+        this.cardActive.inputOn();
     }
 }

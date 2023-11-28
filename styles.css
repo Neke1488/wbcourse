@@ -243,7 +243,7 @@ html {
   }
 
   .header_basket_count {
-    background-color: orange;
+    background-color: #F55123;
     box-sizing: border-box;
     position: absolute;
     line-height: 16px;
@@ -747,6 +747,8 @@ html {
     column-gap: 24px;
   }
 
+
+
   .recipient_wrap_input {
     position: relative;
     width: 100%;
@@ -781,6 +783,14 @@ html {
     transition: all, .2s;
   }
 
+
+  .recipient_input_info_inn {
+    display: block;
+    margin: 0 0 0 -1px;
+    min-height: 16px;
+    font-size: 12px;
+    line-height: 14px;
+  }
   .recipient_input_label {
     margin: 0;
     position: absolute;
@@ -792,15 +802,7 @@ html {
     pointer-events: none;
     transition: all, .1s;
   }
-
-  .recipient_input_info_inn {
-    display: block;
-    margin: 0 0 0 -1px;
-    min-height: 16px;
-    font-size: 12px;
-    line-height: 14px;
-  }
-
+ 
   .recipient_input_error {
     display: block;
     min-height: 16px;
@@ -824,6 +826,10 @@ html {
 
   .recipient_wrap_input_inn {
     grid-area: inn;
+  }
+
+  .input_error_recipient_visible {
+    opacity: 1;
   }
 
   .sidebar_basket {
@@ -860,6 +866,10 @@ html {
     margin: 0 0 4px 0;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .popup_table_item_active {
+    border-color: #CB11AB;
   }
 
   .basket_choose_btn_edit {
@@ -1667,6 +1677,9 @@ html {
     white-space: nowrap;
   }
 
+  .basket_choose_data {
+    display: none;
+  }
   .discount_item:first-child:not(:empty) {
     padding-bottom: 8px;
   }
@@ -1831,6 +1844,28 @@ html {
 
   .location_delete:hover {
     background-color: #F55123;
+  }
+
+  .input_error_recipient {
+    border-color: #C20013;
+    color: #C20013;
+  }
+
+  .navbar_mobile_icon_count {
+    box-sizing: border-box;
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    margin: 0;
+    padding: 0 4px;
+    min-width: 16px;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #FFF;
+    background-color: #F55123;
+    border-radius: 8px;
   }
 
   @media screen and (min-width: 1024px) {

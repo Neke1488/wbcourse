@@ -34,7 +34,7 @@ export default class Basket {
         this.totalPriceBasketVisible = document.querySelector(this.basketVar.basketPriceTotal);
         this.totalCountPositionAtBasket = document.querySelector(this.basketVar.basketCountTotal);
         this.basketOldPriceAll = document.querySelector(this.basketVar.basketOldPriceTotal);
-        this.basketTotalDiscountVisible = document.querySelector(this.basketVar.basket_discount);
+        this.basketTotalDiscountVisible = document.querySelector(this.basketVar.basketDiscount);
         this.chooseDateToDeliverySidebar = document.querySelector(this.basketVar.basketChooseDataTotalDelivery);
         this.chooseItemToDeliverySidebar = document.querySelector(this.basketItemsAddedToDelivery);
         this.checkboxBasketPayment = document.querySelector(this.basketVar.basketCheckboxSidebarPayment);
@@ -74,7 +74,7 @@ export default class Basket {
 
     renderCounter = () => {
         this.totalCountPositionAtBasket.textContent = `${this.allCount} ${calculation(this.allCount, goodsTitles)}`
-        this.changeTextButton();
+        this.changeTextOnTheBtnTotal();
     }
 
     totalCountUp = (count) => {
@@ -106,14 +106,14 @@ export default class Basket {
     }
 
     renderToAllPrice = () => {
-        this.basketPriceTotal.textContent = `${this.allPrice.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} сом`;
+        this.totalPriceBasketVisible.textContent = `${this.allPrice.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')} сом`;
     }
     totalPriceUp = (value) => {
         this.allPrice += value;
         this.renderToAllPrice();
 
-        if(!this.checkForGoods()) {
-            this.offAllGoods();
+        if(!this.checkGoodsInput()) {
+            this.allGoodsNotChecked();
         }
     }
 
@@ -121,8 +121,8 @@ export default class Basket {
         this.allPrice -= value;
         this.renderToAllPrice();
 
-        if(this.checkForGoods()) {
-            this.onAllGoods();
+        if(this.checkGoodsInput()) {
+            this.allGoodsIsChecked();
         }
     }
 
@@ -130,15 +130,17 @@ export default class Basket {
     renderDateToDelivery = (firstDate, lastDate) => {
         const firstMonth = firstDate.getMonth();
         const lastMonth = firstDate.getMonth();
-    
+    // возможно пизда 
+
         if (firstMonth === lastMonth) {
-            this.basketChooseDataTotalDelivery.textContent = `${firstDate.getDate()}-${lastDate.getDate()} ${monthTitles[lastMonth].substring(0, 3)}`;
+            this.chooseDateToDeliverySidebar.textContent = `${firstDate.getDate()}-${lastDate.getDate()} ${monthTitles[lastMonth].substring(0, 3)}`;
         } else {
-            this.basketChooseDataTotalDelivery.textContent = `${firstDate.getDate()} ${monthTitles[firstMonth].substring(0, 3)}-${lastDate.getDate()} ${monthTitles[lastMonth].substring(0, 3)}`;
+            this.chooseDateToDeliverySidebar.textContent = `${firstDate.getDate()} ${monthTitles[firstMonth].substring(0, 3)}-${lastDate.getDate()} ${monthTitles[lastMonth].substring(0, 3)}`;
         }
     }
 
     deliveryDateCount = (arrayList) => {
+
         if (arrayList.length) {
             const arrayData = [];
             const arrayDataResult = [];
@@ -146,13 +148,13 @@ export default class Basket {
             let lastDate = -Infinity;
 
             arrayList.forEach(good =>{
-                good.dateDelivery.forEach(date => {
+                good.dateOfDelivery.forEach(date => {
                     for (let count in date) {
                         if (Date.parse(date[count][0]) < firstDate) firstDate = new Date(date[count][0]);
                         if (Date.parse(date[count][1]) > lastDate) lastDate = new Date(date[count][1]);
                     };
                 });
-                good.dateDelivery.forEach((count) => {
+                good.dateOfDelivery.forEach((count) => {
                     arrayData.push(
                         {
                             date: [Object.values(count)[0][0], Object.values(count)[0][1]],
@@ -161,6 +163,7 @@ export default class Basket {
                     )
                 })
             });
+
             arrayData.forEach(data => {
                 if (!arrayDataResult.length) {
                     arrayDataResult.push({
@@ -187,11 +190,11 @@ export default class Basket {
 
                 const deliveryMoment = this.renderDelivery(arrayDataResult);
 
-                deliveryMoment.removeItems();
-                deliveryMoment.renderItems();
+                deliveryMoment.deleteItems();
+                deliveryMoment.rendering();
             } else {
                 const deliveryMoment = this.renderDelivery();
-                deliveryMoment.removeItems();
+                deliveryMoment.deleteItems();
             }
         }
 
@@ -234,8 +237,8 @@ export default class Basket {
         }
 
         renderForAddresses = (address) => {
-            this.deliveryAddressVisible.textContent = address.data.address;
-            this.deliveryAddressSidebarVisible.textContent = address.data.address;
+            this.deliveryAddressVisible.textContent = address.dated.address;
+            this.deliveryAddressSidebarVisible.textContent = address.dated.address;
        
             if (address.templateBlock === this.basketVar.pointDelivery) {
                 this.deliveryVariables.textContent = this.basketVar.deliveryPlaceText;
@@ -258,11 +261,11 @@ export default class Basket {
         arrayForChangeCountGoods = (idGood, count) => {
             for (let i = 0; i < this.goodsVar.length ; i++) {
                 if (this.goodsVar[i].id === idGood) {
-                    const [ countDate ] = Object.keys(this.goodsVar[i].dateDelivery[this.goodsVar[i].dateDelivery.length - 1]);
-                    const dateValue = Object.values(this.goodsVar[i].dateDelivery[this.goodsVar[i].dateDelivery.length - 1][countDate]);
+                    const [ countDate ] = Object.keys(this.goodsVar[i].dateOfDelivery[this.goodsVar[i].dateOfDelivery.length - 1]);
+                    const dateValue = Object.values(this.goodsVar[i].dateOfDelivery[this.goodsVar[i].dateOfDelivery.length - 1][countDate]);
                     const newObj = { [count]: dateValue};
-                    this.goodsVar[i].dateDelivery[this.goodsVar[i].dateDelivery.length - 1] = newObj;
-                    delete this.goodsVar[i].dateDelivery[this.goodsVar[i].dateDelivery.length - 1][countDate];
+                    this.goodsVar[i].dateOfDelivery[this.goodsVar[i].dateOfDelivery.length - 1] = newObj;
+                    delete this.goodsVar[i].dateOfDelivery[this.goodsVar[i].dateOfDelivery.length - 1][countDate];
 
                     i = this.goodsVar.length + 1;
                 }
@@ -296,7 +299,7 @@ export default class Basket {
             this.allGoodsIsChecked();
             this.allGoodsList.forEach(good => {
                 if(!good.isChecked) {
-                    good.turnOnCheck();
+                    good.inputOn();
                 };
             });
         }
@@ -324,7 +327,7 @@ export default class Basket {
                     this.allGoodsNotChecked();
                     this.allGoodsList.forEach(good => {
                         if(good.isChecked) {
-                            good.offInput();
+                            good.inputOff();
                         };
                     });
                 }

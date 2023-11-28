@@ -195,6 +195,7 @@ export default class Goods {
             if (this.datas.color || this.datas.size) {
                 
                 if (this.datas.color) {
+                    
                     this.goodsMissing.querySelector(this.optionsGoods.goodColor).textContent = `Цвет: ${this.datas.color.trim()}`;
                 }
                 if (this.datas.size) {

@@ -119,6 +119,7 @@ const userGoods = [
         },
         oldPrice: 10500
     },
+
     {
         id: 3,
         image: goodPencils,
@@ -145,6 +146,7 @@ const userGoods = [
         },
         oldPrice: 475,
     },
+   
 ]
 
 export 
@@ -248,7 +250,8 @@ const location = {
     locationDelete: '.location_delete',
 }
 
-export const goodContainer = '#list_of_goods',
+export 
+const goodContainer = '#list_of_goods',
       modalContainerForChoosePay = '#popup_choose_pay',
       modalContainerForChooseAddress = '#popup_choose_address',
       modalContainerForChooseLocation = '#popup_choose_pick_point',
@@ -262,11 +265,11 @@ export const goodContainer = '#list_of_goods',
       basketView = document.forms['form_basket'],
       chooseItemsForDeliveryContainer = '.delivery_items';
 
-export
+export 
 const formActions = {
-    form: '.form_popup',
-    input: '.recipient_input',
+    formPlaces: '.form_popup',
+    inputPlace: '.recipient_input',
     btnSumbit: '.basket_choose_btn',
-    error: 'input_error_recipient_visible',
+    errorPlace: 'input_error_recipient_visible',
     inputError: 'input_error_recipient',
 }

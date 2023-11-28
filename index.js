@@ -28,7 +28,7 @@ const goodList = new Place({
             basket.totalCountUp, basket.totalCountDown, basket.totalOldPriceDown,
             basket.totalOldPriceUp, basket.totalDiscountDown, basket.totalDiscountUp,
             basket.countUp, basket.countDown, basket.checkGoodsInput, basket.allGoodsNotChecked,
-            basket.allGoodsIsChecked, basket.missingGoodsAll
+            basket.allGoodsIsChecked, basket.missingGoodsAll,
         );
         goodItemList.push(good);
         const goodElem = good.createGood();
@@ -68,6 +68,7 @@ const popupForLocationDelivery = new Place({
         const locationDelivery = new TakingDelivery(item, all.location.locationDeliveryPoint, all.location, popupToAddress.allInputsOff);
         deliveryTakingAddress.push(locationDelivery);
         const deliveryLocationElement = locationDelivery.createDeliveryLocationElement();
+        
         popupForLocationDelivery.setItem(deliveryLocationElement);
     }
 },
@@ -82,6 +83,7 @@ const basket = new Basket(all.basketOptions, goodItemList, {
                     item
                 );
                 const deliveryElem = delivery.createDeliveryAll();
+
                 listOfItems.setItem(deliveryElem);
             }
         },
@@ -109,13 +111,16 @@ all.choosePayButton.addEventListener('click', () => {
 });
 
 all.chooseAddressButton.addEventListener('click', () => {
-    popupToAddress.open();
+    popupToAddress.openPopup();
 });
+
 all.choosePaySidebar.addEventListener('click', () => {
-    popupChoosePayment.open();
+    popupChoosePayment.openPopup();
 });
+
 all.chooseAddressSidebar.addEventListener('click', () => {
-    popupToAddress.open();
+   console.log(popupToAddress);
+    popupToAddress.openPopup();
 });
 
 basket.addFirstGood();

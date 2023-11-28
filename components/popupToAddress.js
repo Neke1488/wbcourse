@@ -28,7 +28,7 @@ export default class PopupToAddress extends Popup {
 
     setCurrentAddress = () => {
         this.tableItem[this.tableItem.length - 1].classList.add('popup_table_item_active');
-        this.addressLocationDeliveryList[this.addressLocationDeliveryList.length - 1].enableInput();
+        this.addressLocationDeliveryList[this.addressLocationDeliveryList.length - 1].inputOn();
         this.changeElementKey(this.addressLocationDeliveryList[this.addressLocationDeliveryList.length - 1]);
     }
 
@@ -49,6 +49,7 @@ export default class PopupToAddress extends Popup {
         })
         this.popupButton.addEventListener('click', () => {
             this.addressActive = this.changeAnyElement();
+            
             this.activeTabs = this.tableItem.find(tabs => tabs.classList.contains('popup_table_item_active'));
             this.changeElementKey(this.addressActive);
             this.closePopup();
@@ -58,19 +59,19 @@ export default class PopupToAddress extends Popup {
         super.closePopup();
         this.allInputsOff();
         if (this.addressActive) {
-            this.addressActive.enableInput();
+            this.addressActive.inputOn();
         }
     }
     openPopup() {
         super.openPopup();
         this.setActiveTab();
         if (!this.addressActive) {
-            this.addressActive.setCurrentAddress();
+            this.setCurrentAddress();
         }
     }
     allInputsOff = () => {
-        this.addressLocationList.forEach(e => e.disableInput());
-        this.addressLocationDeliveryList.forEach(e => e.disableInput());
+        this.addressLocationList.forEach(e => e.inputOff());
+        this.addressLocationDeliveryList.forEach(e => e.inputOff());
     }
     changeAnyElement = () => {
         const activeElem = this.addressLocationList.find(e => e.isChecked) || this.addressLocationDeliveryList.find(e => e.isChecked);
